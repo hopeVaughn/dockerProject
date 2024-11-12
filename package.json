@@ -39,6 +39,5 @@
       "npx prettier --write",
       "npx eslint --fix"
     ]
-  },
-  "proxy": "https://blog-backend-886172233725.us-central1.run.app"
+  }
 }

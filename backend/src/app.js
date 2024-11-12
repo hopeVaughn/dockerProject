@@ -3,19 +3,21 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
-dotenv.config(); // Load .env variables
+dotenv.config();
 
 const app = express();
 
-// Conditional CORS configuration
-const corsOptions = process.env.NODE_ENV === 'production'
-  ? { origin: [process.env.FRONTEND_URL], credentials: true }
-  : {}; // Allow all origins in development
+// Allow all origins
+const corsOptions = {
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+};
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
-// Import routes after setting up CORS
 import { postsRoutes } from './routes/posts.js';
 postsRoutes(app);
 

@@ -48,7 +48,7 @@ export function postsRoutes(app) {
       return res.json(post);
     } catch (err) {
       console.error('Error creating post', err);
-      return res.status(500).end(); // Add missing ()
+      return res.status(500).end();
     }
   });
 
@@ -58,7 +58,7 @@ export function postsRoutes(app) {
       return res.json(post);
     } catch (err) {
       console.error('Error updating post', err);
-      return res.status(500).end(); // Add missing ()
+      return res.status(500).end();
     }
   });
 
